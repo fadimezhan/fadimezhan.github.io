@@ -4,7 +4,7 @@
   <title><![CDATA[Fadime Özhan]]></title>
   <link href="http://fadimezhan.github.io/atom.xml" rel="self"/>
   <link href="http://fadimezhan.github.io/"/>
-  <updated>2017-02-06T17:41:26+03:00</updated>
+  <updated>2017-02-06T17:45:25+03:00</updated>
   <id>http://fadimezhan.github.io/</id>
   <author>
     <name><![CDATA[Fadime Özhan]]></name>
@@ -12,6 +12,142 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby'de Hash Yapısı]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/rubyde-hash-yapisi/"/>
+    <updated>2017-02-06T17:42:34+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/rubyde-hash-yapisi</id>
+    <content type="html"><![CDATA[<p>Hash, bir anahtar ve o anahtara ait değerden oluşan, sözlük benzeri bir yapıdır. Arraylere benzer ama arraylar integer ve onun indexinden oluşurken, hash yapısında istediğin tipi kullanabilirsin.
+Yapısı şöyledir:
+hash={&ldquo;anahtar&rdquo;=>&ldquo;değer&rdquo;}</p>
+
+<p>Hash yapısı kolayca oluşturulabilir;</p>
+
+<!-- More -->
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;hello&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;merhaba&quot;</span><span class="p">,</span><span class="s2">&quot;yes&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;evet&quot;</span><span class="p">}</span> <span class="c1">#(1)</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="p">{</span><span class="ss">hello</span><span class="p">:</span><span class="s2">&quot;merhaba&quot;</span><span class="p">,</span> <span class="ss">yes</span><span class="p">:</span><span class="s2">&quot;evet&quot;</span><span class="p">}</span>      <span class="c1">#(2)</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="p">{</span><span class="ss">:hello</span><span class="o">=&gt;</span><span class="s2">&quot;merhaba&quot;</span><span class="p">,</span><span class="ss">:yes</span><span class="s2">&quot;evet&quot;</span><span class="p">}</span>     <span class="c1">#(3)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Aynı yapı farklı syntax özellikleriyle yukarıdaki gibi yazılabilir.</p>
+
+<p>Anahtardan değeri görüntülemek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">[</span><span class="n">hello</span><span class="o">]</span>   <span class="c1">#merhaba (1 ve 2 için)</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">[</span><span class="ss">:hello</span><span class="o">]</span>  <span class="c1">#merhaba (3 için)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Tüm anahtarları ya da değerleri görüntülemek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">.</span><span class="n">keys</span>     <span class="c1">#hello,yes</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">.</span><span class="n">values</span>   <span class="c1">#merhaba,evet</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hash yapısını method olarak da oluşturabilirsiniz.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="no">Hash</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">[</span><span class="s2">&quot;hello&quot;</span><span class="o">]=</span><span class="s2">&quot;merhaba  #metoda değer ekleme</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hashlere default değer verebilirsiniz.
+Default değer vermezseniz, hash içinde bulunmayan değerler nil döndürür.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ya da</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">.</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Hashlerle Kullanabiliceğimiz Metodlar</h3>
+
+<p>Tüm anahtar-değerleri silmek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="n">a</span> <span class="o">=&gt;</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">b</span> <span class="o">=&gt;</span><span class="s2">&quot;b&quot;</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">clear</span>              <span class="c1">#{}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Anahtar birden fazla değere sahip olabilir. Bu değerleri görüntülemek için dizi dönüren assoc metodu;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;renkler&quot;</span><span class="o">=&gt;[</span><span class="s2">&quot;mavi&quot;</span><span class="p">,</span><span class="s2">&quot;yeşil&quot;</span><span class="p">,</span><span class="s2">&quot;mor&quot;</span><span class="o">]</span><span class="p">,</span> <span class="n">harfler</span><span class="o">=&gt;[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="o">]</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">assoc</span><span class="p">(</span><span class="s2">&quot;harfler&quot;</span><span class="p">)</span>     <span class="c1">#{&quot;harfler&quot;,[&quot;a&quot;,&quot;b&quot;]}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">assoc</span><span class="p">(</span><span class="s2">&quot;yok&quot;</span><span class="p">)</span>         <span class="c1">#nil</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hash'e parametre göndererek işleme sokabiliriz;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">hash</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">{</span><span class="o">|</span><span class="n">h</span><span class="p">,</span><span class="n">k</span><span class="o">|</span><span class="n">h</span><span class="o">[</span><span class="n">k</span><span class="o">]=</span><span class="n">k</span><span class="o">.</span><span class="n">to_i</span><span class="o">*</span><span class="mi">2</span><span class="p">}</span>
+</span><span class='line'><span class="nb">hash</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1">#20</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Herhangi bir değeri silmek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span> <span class="o">=&gt;</span><span class="mi">100</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Koşullu olarak silmek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span> <span class="o">=&gt;</span><span class="mi">100</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">delete_if</span><span class="p">{</span><span class="o">|</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="o">|</span> <span class="n">value</span><span class="o">&gt;</span><span class="mi">150</span><span class="p">}</span>    <span class="c1">#{&quot;b&quot;=&gt;100}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hash içindekileri döngüde kullanmak için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">each</span><span class="p">{</span><span class="o">|</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="o">|</span><span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>  <span class="c1">#a is 200</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>flatten metodu iç içe bulunan dizileri tek bir diziye dönüştürür;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">a</span> <span class="o">=</span>  <span class="p">{</span><span class="mi">1</span><span class="o">=&gt;</span> <span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;two&quot;</span><span class="o">]</span><span class="p">,</span> <span class="mi">3</span> <span class="o">=&gt;</span> <span class="s2">&quot;three&quot;</span><span class="p">}</span>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">flatten</span> <span class="c1">#[1, &quot;one&quot;, 2, [2, &quot;two&quot;], 3, &quot;three&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Baska Bilgisayara Octopress Yapılandırması]]></title>
