@@ -4,7 +4,7 @@
   <title><![CDATA[Fadime Özhan]]></title>
   <link href="http://fadimezhan.github.io/atom.xml" rel="self"/>
   <link href="http://fadimezhan.github.io/"/>
-  <updated>2017-02-06T12:43:39+03:00</updated>
+  <updated>2017-02-06T15:36:51+03:00</updated>
   <id>http://fadimezhan.github.io/</id>
   <author>
     <name><![CDATA[Fadime Özhan]]></name>
@@ -22,6 +22,9 @@
 web siteleri geliştirirken, öncelikle webin ne olduğunu, nasıl işlediğini
 bilmek gerekir. Bu konuyu anlatan Tayfun Öziş Erikan hocamızdan öğrendiklerimi
 size aktarmaya çalıştım.</p>
+
+<!-- More -->
+
 
 <ol>
 <li><p>Öncelikle bilgisayarımızı açtık, browser'a girip aradığımız sitenin url adresini
@@ -86,11 +89,18 @@ için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;<
     <link href="http://fadimezhan.github.io/blog/2017/02/06/octopress-komutlari/"/>
     <updated>2017-02-06T11:53:07+03:00</updated>
     <id>http://fadimezhan.github.io/blog/2017/02/06/octopress-komutlari</id>
-    <content type="html"><![CDATA[<h3>Temada değişiklik yapmak için;</h3>
+    <content type="html"><![CDATA[<p>Octopress ile blog yazmak için komutları aşağıdaki gibi uygulamınız gerekiyor.</p>
+
+<h3>Temada değişiklik yapmak için;</h3>
 
 <figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'> rake preview <span class="c">#komutuyla https://localhost:4000 sayfasında yapılan değişiklikler kontrol edilebilir.Değişiklikler henüz görüntülenmemişse server yeniden açılmalıdır.</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- More -->
 
 
 <h3>Yapılan degişiklikleri web sayfasında yayınlamak için;</h3>

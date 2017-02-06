@@ -123,63 +123,12 @@ web siteleri geliştirirken, öncelikle webin ne olduğunu, nasıl işlediğini
 bilmek gerekir. Bu konuyu anlatan Tayfun Öziş Erikan hocamızdan öğrendiklerimi
 size aktarmaya çalıştım.</p>
 
-<ol>
-<li><p>Öncelikle bilgisayarımızı açtık, browser'a girip aradığımız sitenin url adresini
-girip Enter'a bastık. Bunun arkasında olanları inceleyelim.</p>
-
-<ul>
-<li>Öncelikle girdiğimiz url adresini inceleyelim.</li>
-</ul>
-
-
-<blockquote><p><a href="http://www.google.com.tr/index">http://www.google.com.tr/index</a>
-protocol://subdomain.body.uzantı.region/path</p></blockquote>
-
-<p>   <strong>http protokolü;</strong> internet sayfalarını görüntülemek ve güvenli bağlantı kurmak için kullanılan protokoldür.
-   <strong>Uzantı</strong> alan adının türüdür.
-   Url adresinde görünmeyen bir kısım mecuttur.
-    <strong>www.google.com.tr:80</strong> Burada 80 port numarasıdır. 80 http protokolünün varsayılan portudur.</p></li>
-<li><p>Daha sonra bilgisayarımız bağlı olduğu modem aracılığı ile internet servis sağlayıcısına(ISP) yönlendirilir.(Türkiye
-için genellikle Türk Telekom)Modemlerin yaptığı şey,bize internete çıkmayı sağlayan ip adresi sağlamaktır.
-İnternet servis sağlayıcısı ise verilen adrese ulaşmak için bir çok birbirine bağlı Dns
-ile verilen adresi arar. Dns(domain name server), alan adını ip adresine dönüştürür. Verilen adrese ulaşıldığında
-ilgili server'a(sunucu) bağlanılır. Karşı tarafın sunucusunda da bir takım işlemler gerçekleşir.</p></li>
-<li><p>Sunucuya bağlanıyoruz, peki sunucunun içinde ne var?
-Sunucu görüntülediğimiz sayfaların sürekli ulaşılabilir olmasını sağlar.
-Sunucu aslında içinde belirli programların yüklü olduğu bilgisayarlardır. Sunucularda yüklü
-olması gereken programlar; Linux, web server, app server, database server'dır.
-Web server: Nginx, apachi, IIS
-App server: Puma, Unicorn, Webrick, Thin
-Database server: Oracle, Postgresql, Sqlite, Mysql</p></li>
-<li><p>Rails için kullanılan programlar; Linux, Nginx, Puma, Postgresql.</p></li>
-<li><p>Http ile her şey paket olarak kullanılır. Kullanıcının bilgisayarından yaptığı isteğe request paketi, sunucudan
-kullanıcıya gönderilen paket ise responce paketi olarak adlandırılır. Sunucuya ulaşıldığında aranan sayfa
-sunucuda mecut ise; responce paketi olarak kullanıcıya gönderilir. Ama bu paket doğrudan gönderilmez.
-Hızlı olması için paket parçalara ayrılır. Farklı adresler üzerinde kullanıcıya gönderilir ve
-kullanıcının browser'ında tekrar birleştirilerek, görüntülenir.</p></li>
-<li><p>Browser sadece html'den anlar. Kullanıcının isteği sunucuda mevcut ise responce paketi gönderilir ve
-sayfa görüntülenir. Peki istek sunucuda mevcut değil ise ne olur? Burada http status kodları devreye girer. Bazen web sayfalarında
-“404 Page Not Found” şeklinde hatalarla karşılaşrız. Bunlar bize hatayı anlamamız
-için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;</p>
-
-<ul>
-<li><strong>50x</strong>: server hatası</li>
-<li><strong>40x</strong>:sayfa yok</li>
-<li><strong>20x</strong>: root hatası</li>
-<li><strong>30x</strong>: daha önce göndermişse bu hatayı verir.</li>
-</ul>
-</li>
-</ol>
-
-
-<p>Daha temel ve animasyonlu anlatım için ziyaret edebilirsiniz;</p>
-
-<ul>
-<li><a href="http://www.bbc.co.uk/worldservice/flash/swf/superpower/web_works/tr/internet_expl_466.swf">http://www.bbc.co.uk/worldservice/flash/swf/superpower/web_works/tr/internet_expl_466.swf</a></li>
-</ul>
-
 </div>
   
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2017/02/06/web-nedir/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -214,56 +163,23 @@ için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;<
   </header>
 
 
-  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Temada değişiklik yapmak için;</h3>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Octopress ile blog yazmak için komutları aşağıdaki gibi uygulamınız gerekiyor.</p>
+
+<h3>Temada değişiklik yapmak için;</h3>
 
 <figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'> rake preview <span class="c">#komutuyla https://localhost:4000 sayfasında yapılan değişiklikler kontrol edilebilir.Değişiklikler henüz görüntülenmemişse server yeniden açılmalıdır.</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Yapılan degişiklikleri web sayfasında yayınlamak için;</h3>
 
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> git add .
-</span><span class='line'> git commit -m <span class="s2">&quot;message&quot;</span>
-</span><span class='line'> git push origin <span class="nb">source</span>
-</span><span class='line'><span class="nb"> </span>rake generate
-</span><span class='line'> rake deploy
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Post yayınlamak için;</h3>
-
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> rake new_post<span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span>    // <span class="nb">source</span>/_posts
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>ya da;</p>
-
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> rake new_page<span class="o">[</span>Web/page.html<span class="o">]</span> // <span class="nb">source</span>/Web/page.html
-</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> git add .
-</span><span class='line'> git commit -m <span class="s2">&quot;message&quot;</span>
-</span><span class='line'> git push origin <span class="nb">source</span>
-</span><span class='line'><span class="nb"> </span>rake generate
-</span><span class='line'> rake deploy
-</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
+  
+    <footer>
+      <a class="read-more btn btn-default" href="/blog/2017/02/06/octopress-komutlari/">Read on &rarr;</a>
+    </footer>
   
 
 
