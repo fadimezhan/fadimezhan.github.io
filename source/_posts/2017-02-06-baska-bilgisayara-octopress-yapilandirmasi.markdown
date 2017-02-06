@@ -3,7 +3,7 @@ layout: post
 title: "Baska Bilgisayara Octopress Yapılandırması"
 date: 2017-02-06 17:21:15 +0300
 comments: true
-categories: [octopress, settings, blog, post, computers, github]
+categories: [Octopress, Settings, Blog, Post, Computers, Github]
 ---
 
 
