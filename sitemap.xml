@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi/</loc>
+<lastmod>2017-02-06T16:41:33+03:00</lastmod>
+</url>
+<url>
 <loc>http://fadimezhan.github.io/blog/2017/02/06/web-nedir/</loc>
 <lastmod>2017-02-06T12:33:15+03:00</lastmod>
 </url>
@@ -46,5 +50,23 @@
 </url>
 <url>
 <loc>http://fadimezhan.github.io/blog/categories/server/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/bilisim/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/guvenlik/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/hacker/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/exploit/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/hacking/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/ddos/</loc>
 </url>
 </urlset>

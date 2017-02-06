@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Web Nedir, Nasıl Çalışır? - Fadime Özhan</title>
+  <title>Bilisim Güvenligi - Fadime Özhan</title>
   <meta name="author" content="Fadime Özhan">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://fadimezhan.github.io/blog/2017/02/06/web-nedir/">
+  <link rel="canonical" href="http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Fadime Özhan" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://fadimezhan.github.io/blog/2017/02/06/web-nedir/">
-  <meta property="og:title" content="Web Nedir, Nasıl Çalışır? - Fadime Özhan">
+  <meta property="og:url" content="http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi/">
+  <meta property="og:title" content="Bilisim Güvenligi - Fadime Özhan">
   
 
   <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
@@ -101,82 +101,72 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-02-06T12:33:15+03:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-02-06T16:41:33+03:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
       </p>
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Web Nedir, Nasıl Çalışır?
+        Bilisim Güvenligi
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p>Lyk-2016, Ruby on Rails sınıfında öğrendiklerimi aktarmaya devam ediyorum. Ruby on Rails ile
-web siteleri geliştirirken, öncelikle webin ne olduğunu, nasıl işlediğini
-bilmek gerekir. Bu konuyu anlatan Tayfun Öziş Erikan hocamızdan öğrendiklerimi
-size aktarmaya çalıştım.</p>
+<div class="entry-content clearfix" itemprop="articleBody description"><h2>Bilişim Güvenliği Hakkında Genel Bilgiler</h2>
 
-<!-- More -->
+<p>   Günümüzde neredeyse tüm firmalar işlemlerini internet üzerinden yapmaktadır. Bu durum verilerin kötü niyetli kişilerden korunmasını gerektirir. Son teknolojilerle bilgisayarın alt yapısının karmaşık hale gelmesiyle de verileri korumak zorlaşmıştır. Bu yüzden güvenlik alanında uzman kişilere ihtiyaç duyulur.</p>
 
+<h3>Hacker Kimdir?</h3>
 
-<ol>
-<li><p>Öncelikle bilgisayarımızı açtık, browser'a girip aradığımız sitenin url adresini
-girip Enter'a bastık. Bunun arkasında olanları inceleyelim.</p>
+<p> Hacker filmlerden dolayı algımıza işleyen bilişim suçlarını işleyen kişi değildir. Daha genel bir tanımdır. Hacker; bilgisayarın detaylarını öğrenmeye ilgili, yazılım ve donanımın yapabileceklerini geliştirebilen kişidir.</p>
 
-<ul>
-<li>Öncelikle girdiğimiz url adresini inceleyelim.</li>
-</ul>
+<p><strong>White Hat Hackers(Beyaz Şapkalı Hacker):</strong>   Bilişim sistemlerinin güvenliğini sağlayan ve geliştiren kişilerdir. Güvenlik uzmanı olarak adlandırılırlar.</p>
 
+<p><strong>Black Hat Hackers(Siyah Şapkalı Hacker):</strong> Bilişim dünyasının korsanlarıdır. Bir çok sebeple hareket etselerde, amaçları zarar vermektir.</p>
 
-<blockquote><p><a href="http://www.google.com.tr/index">http://www.google.com.tr/index</a>
-protocol://subdomain.body.uzantı.region/path</p></blockquote>
+<p><strong>Grey Hat Hackers(Gri Şapkalı Hacker):</strong> Hem savunma hem saldırı yapan gruptur. Amacı sadece kazancıdır.</p>
 
-<p>   <strong>http protokolü;</strong> internet sayfalarını görüntülemek ve güvenli bağlantı kurmak için kullanılan protokoldür.
-   <strong>Uzantı</strong> alan adının türüdür.
-   Url adresinde görünmeyen bir kısım mecuttur.
-    <strong>www.google.com.tr:80</strong> Burada 80 port numarasıdır. 80 http protokolünün varsayılan portudur.</p></li>
-<li><p>Daha sonra bilgisayarımız bağlı olduğu modem aracılığı ile internet servis sağlayıcısına(ISP) yönlendirilir.(Türkiye
-için genellikle Türk Telekom)Modemlerin yaptığı şey,bize internete çıkmayı sağlayan ip adresi sağlamaktır.
-İnternet servis sağlayıcısı ise verilen adrese ulaşmak için bir çok birbirine bağlı Dns
-ile verilen adresi arar. Dns(domain name server), alan adını ip adresine dönüştürür. Verilen adrese ulaşıldığında
-ilgili server'a(sunucu) bağlanılır. Karşı tarafın sunucusunda da bir takım işlemler gerçekleşir.</p></li>
-<li><p>Sunucuya bağlanıyoruz, peki sunucunun içinde ne var?
-Sunucu görüntülediğimiz sayfaların sürekli ulaşılabilir olmasını sağlar.
-Sunucu aslında içinde belirli programların yüklü olduğu bilgisayarlardır. Sunucularda yüklü
-olması gereken programlar; Linux, web server, app server, database server'dır.
-Web server: Nginx, apachi, IIS
-App server: Puma, Unicorn, Webrick, Thin
-Database server: Oracle, Postgresql, Sqlite, Mysql</p></li>
-<li><p>Rails için kullanılan programlar; Linux, Nginx, Puma, Postgresql.</p></li>
-<li><p>Http ile her şey paket olarak kullanılır. Kullanıcının bilgisayarından yaptığı isteğe request paketi, sunucudan
-kullanıcıya gönderilen paket ise responce paketi olarak adlandırılır. Sunucuya ulaşıldığında aranan sayfa
-sunucuda mecut ise; responce paketi olarak kullanıcıya gönderilir. Ama bu paket doğrudan gönderilmez.
-Hızlı olması için paket parçalara ayrılır. Farklı adresler üzerinde kullanıcıya gönderilir ve
-kullanıcının browser'ında tekrar birleştirilerek, görüntülenir.</p></li>
-<li><p>Browser sadece html'den anlar. Kullanıcının isteği sunucuda mevcut ise responce paketi gönderilir ve
-sayfa görüntülenir. Peki istek sunucuda mevcut değil ise ne olur? Burada http status kodları devreye girer. Bazen web sayfalarında
-“404 Page Not Found” şeklinde hatalarla karşılaşrız. Bunlar bize hatayı anlamamız
-için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;</p>
+<p><strong>Hacking</strong>; Bir programın kodlarının daha hızlı ve etkili olması için tersine mühendislik yapmaktır.</p>
 
-<ul>
-<li><strong>50x</strong>: server hatası</li>
-<li><strong>40x</strong>:sayfa yok</li>
-<li><strong>20x</strong>: root hatası</li>
-<li><strong>30x</strong>: daha önce göndermişse bu hatayı verir.</li>
-</ul>
-</li>
-</ol>
+<p><strong>Tersine Mühendislik</strong>; Programın hatalarını tespit etmeye çalışmaktır.</p>
 
+<p>Sistemlere saldıran black hat hackerlar kullandıkları yöntemlere göre ayrılırlar:</p>
 
-<p>Daha temel ve animasyonlu anlatım için ziyaret edebilirsiniz;</p>
+<p><strong>Script Kiddies:</strong> Başkalarının yazdığı programları internetten indirir. Bu şekilde zarar vermeye çalışır. Lamer da denilir.</p>
 
-<ul>
-<li><a href="http://www.bbc.co.uk/worldservice/flash/swf/superpower/web_works/tr/internet_expl_466.swf">http://www.bbc.co.uk/worldservice/flash/swf/superpower/web_works/tr/internet_expl_466.swf</a></li>
-</ul>
+<p>Miscrosoft'un da dediği gibi;</p>
 
+<blockquote><p>&ldquo;En zararlı kişi ne yaptığını bilmeyendir.&rdquo;</p></blockquote>
+
+<p><strong>Phreakers:</strong> Eskiden sentral ve telefon hatlarının açıkları kullanan kişilerdir.</p>
+
+<p><strong>Crackers:</strong> Yazılımda  iyi olan, sistemleri kırıp bunları yayınlayan kişilerdir.</p>
+
+<h3>Kullanılan Genel Terimler</h3>
+
+<p><strong>Hactivizm:</strong> Hacking işleminin herhangi bir amaç için yapılmasıdır. Ama bu suç olmadığı anlamına gelmez.</p>
+
+<p><strong>Warez:</strong> Ticari yazılımın kırılarak dağıtılmasıdır.</p>
+
+<p><strong>Cowboy Dili:</strong> Hackerların chat programlarında kullandığı dildir.</p>
+
+<p><strong>Exploit:</strong> Sisteğimin zayıflığını kullanarak zarar veren kod.</p>
+
+<p><strong>Attack:</strong> Sisteme saldırmak</p>
+
+<p><strong>IDS:</strong> Kaçak giriş tespit sistemi</p>
+
+<p><strong>IPS:</strong> Kaçak giriş engelleme sistemi</p>
+
+<p><strong>DLP:</strong> Veri Kaybı engelleme sistemi</p>
+
+<p><strong>Url Filtrering:</strong> Http erişim kısıtlama</p>
+
+<p><strong>Threat :</strong> Tehtid</p>
+
+<p><strong>Vulnerability:</strong> Zayıflık</p>
 </div>
 
 
@@ -200,13 +190,13 @@ için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;<
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-02-06T12:33:15+03:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-02-06T16:41:33+03:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/browser/'>browser</a>, <a class='category' href='/blog/categories/dns/'>dns</a>, <a class='category' href='/blog/categories/protokol/'>protokol</a>, <a class='category' href='/blog/categories/server/'>server</a>, <a class='category' href='/blog/categories/sunucu/'>sunucu</a>, <a class='category' href='/blog/categories/web/'>web</a>
+    <a class='category' href='/blog/categories/bilisim/'>bilişim</a>, <a class='category' href='/blog/categories/ddos/'>ddos</a>, <a class='category' href='/blog/categories/exploit/'>exploit</a>, <a class='category' href='/blog/categories/guvenlik/'>güvenlik</a>, <a class='category' href='/blog/categories/hacker/'>hacker</a>, <a class='category' href='/blog/categories/hacking/'>hacking</a>
   
 </span>
 
@@ -215,7 +205,7 @@ için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;<
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fadimezhan.github.io/blog/2017/02/06/web-nedir/" data-via="https://twitter.com/fadimezhan" data-counturl="http://fadimezhan.github.io/blog/2017/02/06/web-nedir/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi/" data-via="https://twitter.com/fadimezhan" data-counturl="http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -229,10 +219,8 @@ için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;<
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2017/02/06/octopress-komutlari/" title="Previous Post: Octopress Komutları">&laquo; Octopress Komutları</a></li>
+            <li class="previous"><a href="/blog/2017/02/06/web-nedir/" title="Previous Post: Web Nedir, Nasıl Çalışır?">&laquo; Web Nedir, Nasıl Çalışır?</a></li>
             
-            
-            <li class="next"><a href="/blog/2017/02/06/bilisim-guvenligi/" title="Next Post: Bilisim Güvenligi">Bilisim Güvenligi &raquo;</a></li>
             
           </ul>
         
@@ -251,9 +239,9 @@ için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;<
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2017/02/06/bilisim-guvenligi/">Bilisim Güvenligi</a>
+    <a class="list-group-item active" href="/blog/2017/02/06/bilisim-guvenligi/">Bilisim Güvenligi</a>
     
-    <a class="list-group-item active" href="/blog/2017/02/06/web-nedir/">Web Nedir, Nasıl Çalışır?</a>
+    <a class="list-group-item " href="/blog/2017/02/06/web-nedir/">Web Nedir, Nasıl Çalışır?</a>
     
     <a class="list-group-item " href="/blog/2017/02/06/octopress-komutlari/">Octopress Komutları</a>
     
