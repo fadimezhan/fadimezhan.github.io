@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://fadimezhan.github.io/blog/2017/02/06/web-nedir/</loc>
+<lastmod>2017-02-06T12:33:15+03:00</lastmod>
+</url>
+<url>
 <loc>http://fadimezhan.github.io/blog/2017/02/06/octopress-komutlari/</loc>
 <lastmod>2017-02-06T11:53:07+03:00</lastmod>
 </url>
@@ -24,5 +28,23 @@
 </url>
 <url>
 <loc>http://fadimezhan.github.io/blog/categories/yayin/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/web/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/browser/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/sunucu/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/protokol/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/dns/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/server/</loc>
 </url>
 </urlset>

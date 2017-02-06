@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Fadime Özhan]]></title>
-  <link href="http://fadimezhan.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Web | Fadime Özhan]]></title>
+  <link href="http://fadimezhan.github.io/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://fadimezhan.github.io/"/>
   <updated>2017-02-06T12:43:39+03:00</updated>
   <id>http://fadimezhan.github.io/</id>
@@ -77,62 +77,6 @@ için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;<
 <ul>
 <li><a href="http://www.bbc.co.uk/worldservice/flash/swf/superpower/web_works/tr/internet_expl_466.swf">http://www.bbc.co.uk/worldservice/flash/swf/superpower/web_works/tr/internet_expl_466.swf</a></li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopress Komutları]]></title>
-    <link href="http://fadimezhan.github.io/blog/2017/02/06/octopress-komutlari/"/>
-    <updated>2017-02-06T11:53:07+03:00</updated>
-    <id>http://fadimezhan.github.io/blog/2017/02/06/octopress-komutlari</id>
-    <content type="html"><![CDATA[<h3>Temada değişiklik yapmak için;</h3>
-
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> rake preview <span class="c">#komutuyla https://localhost:4000 sayfasında yapılan değişiklikler kontrol edilebilir.Değişiklikler henüz görüntülenmemişse server yeniden açılmalıdır.</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Yapılan degişiklikleri web sayfasında yayınlamak için;</h3>
-
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> git add .
-</span><span class='line'> git commit -m <span class="s2">&quot;message&quot;</span>
-</span><span class='line'> git push origin <span class="nb">source</span>
-</span><span class='line'><span class="nb"> </span>rake generate
-</span><span class='line'> rake deploy
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Post yayınlamak için;</h3>
-
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> rake new_post<span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span>    // <span class="nb">source</span>/_posts
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>ya da;</p>
-
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> rake new_page<span class="o">[</span>Web/page.html<span class="o">]</span> // <span class="nb">source</span>/Web/page.html
-</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> git add .
-</span><span class='line'> git commit -m <span class="s2">&quot;message&quot;</span>
-</span><span class='line'> git push origin <span class="nb">source</span>
-</span><span class='line'><span class="nb"> </span>rake generate
-</span><span class='line'> rake deploy
-</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>
