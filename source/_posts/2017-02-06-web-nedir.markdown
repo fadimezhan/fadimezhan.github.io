@@ -1,0 +1,62 @@
+---
+layout: post
+title: "Web Nedir, Nasıl Çalışır?"
+date: 2017-02-06 12:33:15 +0300
+comments: true
+categories: [Web, Browser, Sunucu, Protokol, Dns, Server ]
+---
+
+
+Lyk-2016, Ruby on Rails sınıfında öğrendiklerimi aktarmaya devam ediyorum. Ruby on Rails ile
+web siteleri geliştirirken, öncelikle webin ne olduğunu, nasıl işlediğini
+bilmek gerekir. Bu konuyu anlatan Tayfun Öziş Erikan hocamızdan öğrendiklerimi
+size aktarmaya çalıştım.
+
+1. Öncelikle bilgisayarımızı açtık, browser'a girip aradığımız sitenin url adresini
+ girip Enter'a bastık. Bunun arkasında olanları inceleyelim.
+
+   * Öncelikle girdiğimiz url adresini inceleyelim.
+
+    >http://www.google.com.tr/index
+    >protocol://subdomain.body.uzantı.region/path
+
+    **http protokolü;** internet sayfalarını görüntülemek ve güvenli bağlantı kurmak için kullanılan protokoldür.
+    **Uzantı** alan adının türüdür.
+    Url adresinde görünmeyen bir kısım mecuttur.
+     **www.google.com.tr:80** Burada 80 port numarasıdır. 80 http protokolünün varsayılan portudur.
+
+2. Daha sonra bilgisayarımız bağlı olduğu modem aracılığı ile internet servis sağlayıcısına(ISP) yönlendirilir.(Türkiye
+için genellikle Türk Telekom)Modemlerin yaptığı şey,bize internete çıkmayı sağlayan ip adresi sağlamaktır.
+İnternet servis sağlayıcısı ise verilen adrese ulaşmak için bir çok birbirine bağlı Dns
+ile verilen adresi arar. Dns(domain name server), alan adını ip adresine dönüştürür. Verilen adrese ulaşıldığında
+ilgili server'a(sunucu) bağlanılır. Karşı tarafın sunucusunda da bir takım işlemler gerçekleşir.
+
+3. Sunucuya bağlanıyoruz, peki sunucunun içinde ne var?
+Sunucu görüntülediğimiz sayfaların sürekli ulaşılabilir olmasını sağlar.
+ Sunucu aslında içinde belirli programların yüklü olduğu bilgisayarlardır. Sunucularda yüklü
+  olması gereken programlar; Linux, web server, app server, database server'dır.
+Web server: Nginx, apachi, IIS
+App server: Puma, Unicorn, Webrick, Thin
+Database server: Oracle, Postgresql, Sqlite, Mysql
+
+* Rails için kullanılan programlar; Linux, Nginx, Puma, Postgresql.
+
+4. Http ile her şey paket olarak kullanılır. Kullanıcının bilgisayarından yaptığı isteğe request paketi, sunucudan
+kullanıcıya gönderilen paket ise responce paketi olarak adlandırılır. Sunucuya ulaşıldığında aranan sayfa
+sunucuda mecut ise; responce paketi olarak kullanıcıya gönderilir. Ama bu paket doğrudan gönderilmez.
+Hızlı olması için paket parçalara ayrılır. Farklı adresler üzerinde kullanıcıya gönderilir ve
+kullanıcının browser'ında tekrar birleştirilerek, görüntülenir.
+
+5. Browser sadece html'den anlar. Kullanıcının isteği sunucuda mevcut ise responce paketi gönderilir ve
+ sayfa görüntülenir. Peki istek sunucuda mevcut değil ise ne olur? Burada http status kodları devreye girer. Bazen web sayfalarında
+“404 Page Not Found” şeklinde hatalarla karşılaşrız. Bunlar bize hatayı anlamamız
+için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;
+
+    * **50x**: server hatası
+    * **40x**:sayfa yok
+    * **20x**: root hatası
+    * **30x**: daha önce göndermişse bu hatayı verir.
+
+Daha temel ve animasyonlu anlatım için ziyaret edebilirsiniz;
+
+* http://www.bbc.co.uk/worldservice/flash/swf/superpower/web_works/tr/internet_expl_466.swf
