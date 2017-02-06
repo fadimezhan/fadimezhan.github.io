@@ -3,17 +3,18 @@ layout: post
 title: "Octopress Komutları"
 date: 2017-02-06 11:53:07 +0300
 comments: true
-categories: octopress
+categories: Octopress
+published: true
 ---
 
 ## Temada değişiklik yapmak için;
-```ssh
+```sh
 - rake preview #komutuyla https://localhost:4000 sayfasında yapılan değişiklikler kontrol
 edilebilir.Değişiklikler henüz görüntülenmemişse server yeniden açılmalıdır.
 ```
 
 ## Yapılan degişiklikleri web sayfasında yayınlamak için;
-```ssh
+```sh
 - git add .
 - git commit -m "message"
 - git push origin source
