@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails/</loc>
+<lastmod>2017-02-06T16:53:45+03:00</lastmod>
+</url>
+<url>
 <loc>http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi/</loc>
 <lastmod>2017-02-06T16:41:33+03:00</lastmod>
 </url>
@@ -68,5 +72,23 @@
 </url>
 <url>
 <loc>http://fadimezhan.github.io/blog/categories/ddos/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/ruby/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/ruby-on-rails/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/model/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/controller/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/view/</loc>
+</url>
+<url>
+<loc>http://fadimezhan.github.io/blog/categories/web-site/</loc>
 </url>
 </urlset>

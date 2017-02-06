@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Fadime Özhan</title>
+  <title>Ruby on Rails - Fadime Özhan</title>
   <meta name="author" content="Fadime Özhan">
 
   
@@ -14,16 +14,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://fadimezhan.github.io/">
+  <link rel="canonical" href="http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails/">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Fadime Özhan" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://fadimezhan.github.io/">
-  <meta property="og:title" content="Fadime Özhan">
-  <meta property="og:description" content="A web developer, student and researcher">
+  <meta property="og:url" content="http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails/">
+  <meta property="og:title" content="Ruby on Rails - Fadime Özhan">
+  
 
   <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
 
@@ -76,22 +76,15 @@
 
   </header>
   
-  <div class="container-fluid" id="background-image">
-  </div>
-  
   <div id="main" role="main" class="container">
     <div id="content" style="margin-top: 73px;">
       <div class="row">
-  <div class="page-content col-md-9">
-    <div class="blog-index" itemscope itemtype="http://schema.org/Blog">
+  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
     <meta itemprop="name" content="Fadime Özhan" />
     <meta itemprop="description" content="A web developer, student and researcher" />
     <meta itemprop="url" content="http://fadimezhan.github.io" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
       
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
   <header class="page-header">
     
       <p class="meta text-muted text-uppercase">
@@ -113,12 +106,15 @@
       </p>
     
     
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2017/02/06/ruby-on-rails/" itemprop="url">Ruby on Rails</a></h2>
+    <h1 class="entry-title" itemprop="name headline">
+        Ruby on Rails
+        
+    </h1>
     
   </header>
 
 
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Ruby on Rails, Ruby dilinde yazılmış, açık kaynak kodlu ve web uygulaması
+<div class="entry-content clearfix" itemprop="articleBody description"><p>Ruby on Rails, Ruby dilinde yazılmış, açık kaynak kodlu ve web uygulaması
 geliştirmek için gereken tüm bileşenlere sahip frameworktür. İki tane felsefeyi esas alır;</p>
 
 <ul>
@@ -140,70 +136,82 @@ geliştirmek için gereken tüm bileşenlere sahip frameworktür. İki tane fels
 
 <p>Şimdi proje oluşturma işlemlerine bakalım:</p>
 
+<!-- More -->
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rails new blog      //blog isimli proje oluşturur.
+</span><span class='line'>$ bundle install      //içindeki gemlleri yükler ya da günceller.
+</span><span class='line'>$ cd blod             //oluşturulan klasörün içine girer.
+</span><span class='line'>$ rails server        //serverı açar.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Son komutla <a href="http://localhost:3000">http://localhost:3000</a> adresinde serverı açar ve sizi sabit welcome sayfası karşılar.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$rails generate controller welcome index</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Burada welcome isminde controller ve index isminde action(olay) oluşturuyoruz.  <strong>app/views/welcome/index.html.erb</strong> sayfası içindeki kodlar kullanıcının görüntüleyeceği kodları içeriyor.Bu içeriği şöyle değiştirelim.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;h1&gt;Hello,Rails&lt;/h1&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p> localhostu açtığımızda hala aynı sayfa bizi karşılıyor. Bu yüzden <strong>config/routes.rb</strong> içinden  #root &lsquo;welcome#index&rsquo; kısmının başındaki # işareti kaldırıp, tekrar localimizi açalım. Artık yazdığımız html sayfası görüntüleniyor.</p>
+
+<p>Şimdiye kadar controller,action ve view oluşturmayı öğrendik.</p>
+
+<p>Artık blogumuza biraz içerik katalım.Bunun için resource oluşturuyouz. Bununla oluşturma,yoketme, güncelleme,okuma gibi kısımlar ekleniyor.
+<strong>config/routes.rb</strong> sayfasına kodumuzu ekleyelim.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>get 'welcome/index'
+</span><span class='line'>resources :articles
+</span><span class='line'>root 'welcome#index'</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://localhost:3000/articles/new">http://localhost:3000/articles/new</a>  sayfası oluşturuldu ama routing hatası veriyor. Controller oluşturulması gerekiyor.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bin/rails generate controller articles</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Şimdide bilinmeyen action hatası veriyor. Bunun için <strong>app/controllers/articles_controller.rb</strong> sayfasına kodlarımızı ekleyelim.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>class ArticlesController &lt; ApplicationController
+</span><span class='line'>  def new
+</span><span class='line'>  end
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>app/views/articles/new.html.erb</strong> sayfasını oluşturup içine kodlarımızı yazalım.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;h1&gt;New Article&lt;/h1&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Artık <a href="http://localhost:3000/articles/new">http://localhost:3000/articles/new</a> adresinde görüntüleyebiliriz.</p>
 </div>
-  
-  
-    <footer>
-      <a class="read-more btn btn-default" href="/blog/2017/02/06/ruby-on-rails/">Read on &rarr;</a>
-    </footer>
-  
 
 
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      <footer>
+        <p class="meta text-muted">
           
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-02-06T16:41:33+03:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2017/02/06/bilisim-guvenligi/" itemprop="url">Bilisim Güvenligi</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Günümüzde neredeyse tüm firmalar işlemlerini internet üzerinden yapmaktadır. Bu durum verilerin kötü niyetli kişilerden korunmasını gerektirir. Son teknolojilerle bilgisayarın alt yapısının karmaşık hale gelmesiyle de verileri korumak zorlaşmıştır. Bu yüzden güvenlik alanında uzman kişilere ihtiyaç duyulur.</p>
-
-<h3>Hacker Kimdir?</h3>
-
-<p> Hacker filmlerden dolayı algımıza işleyen bilişim suçlarını işleyen kişi değildir. Daha genel bir tanımdır. Hacker; bilgisayarın detaylarını öğrenmeye ilgili, yazılım ve donanımın yapabileceklerini geliştirebilen kişidir.</p>
-
-</div>
-  
-  
-    <footer>
-      <a class="read-more btn btn-default" href="/blog/2017/02/06/bilisim-guvenligi/">Read on &rarr;</a>
-    </footer>
   
 
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Fadime Özhan</span></span>
 
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
           
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
 
 
 
@@ -216,107 +224,56 @@ geliştirmek için gereken tüm bileşenlere sahip frameworktür. İki tane fels
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-02-06T12:33:15+03:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2017/02/06/web-nedir/" itemprop="url">Web Nedir, Nasıl Çalışır?</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Lyk-2016, Ruby on Rails sınıfında öğrendiklerimi aktarmaya devam ediyorum. Ruby on Rails ile
-web siteleri geliştirirken, öncelikle webin ne olduğunu, nasıl işlediğini
-bilmek gerekir. Bu konuyu anlatan Tayfun Öziş Erikan hocamızdan öğrendiklerimi
-size aktarmaya çalıştım.</p>
-
-</div>
-  
-  
-    <footer>
-      <a class="read-more btn btn-default" href="/blog/2017/02/06/web-nedir/">Read on &rarr;</a>
-    </footer>
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-02-06T16:53:45+03:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
           
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/controller/'>controller</a>, <a class='category' href='/blog/categories/model/'>model</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>, <a class='category' href='/blog/categories/ruby-on-rails/'>ruby on rails</a>, <a class='category' href='/blog/categories/view/'>view</a>, <a class='category' href='/blog/categories/web-site/'>web site</a>
+  
+</span>
+
+
+        </p>
         
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2017-02-06T11:53:07+03:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2017/02/06/octopress-komutlari/" itemprop="url">Octopress Komutları</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Octopress ile blog yazmak için komutları aşağıdaki gibi uygulamınız gerekiyor.</p>
-
-<h3>Temada değişiklik yapmak için;</h3>
-
-<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'> rake preview <span class="c">#komutuyla https://localhost:4000 sayfasında yapılan değişiklikler kontrol edilebilir.Değişiklikler henüz görüntülenmemişse server yeniden açılmalıdır.</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails/" data-via="https://twitter.com/fadimezhan" data-counturl="http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
-    <footer>
-      <a class="read-more btn btn-default" href="/blog/2017/02/06/octopress-komutlari/">Read on &rarr;</a>
-    </footer>
-  
 
-
-        </article>
-      
-    </div>
-
-    <ul class="pager">
-      
-        <li class="previous disabled"><a href="#">&larr;&nbsp;Older</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-        <li class="next disabled"><a href="#">Newer&nbsp;&rarr;</a></li>
-      
-    </ul>
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2017/02/06/bilisim-guvenligi/" title="Previous Post: Bilisim Güvenligi">&laquo; Bilisim Güvenligi</a></li>
+            
+            
+          </ul>
+        
+      </footer>
+    </article>
+    
   </div>
 
   
-    <aside class="sidebar col-md-3">
-      
-        <section class="panel panel-default">
+  <aside class="sidebar col-md-3">
+    
+      <section class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Recent Posts</h3>
   </div>
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2017/02/06/ruby-on-rails/">Ruby on Rails</a>
+    <a class="list-group-item active" href="/blog/2017/02/06/ruby-on-rails/">Ruby on Rails</a>
     
     <a class="list-group-item " href="/blog/2017/02/06/bilisim-guvenligi/">Bilisim Güvenligi</a>
     
@@ -365,8 +322,8 @@ size aktarmaya çalıştım.</p>
 
 
 
-      
-    </aside>
+    
+  </aside>
   
 </div>
 
