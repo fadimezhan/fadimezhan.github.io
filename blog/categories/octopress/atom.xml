@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Octopress | Fadime Özhan]]></title>
+  <link href="http://fadimezhan.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://fadimezhan.github.io/"/>
+  <updated>2017-02-06T11:59:44+03:00</updated>
+  <id>http://fadimezhan.github.io/</id>
+  <author>
+    <name><![CDATA[Fadime Özhan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress Komutları]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/octopress-komutlari/"/>
+    <updated>2017-02-06T11:53:07+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/octopress-komutlari</id>
+    <content type="html"><![CDATA[<h2>Temada değişiklik yapmak için;</h2>
+
+<pre><code class="ssh">- rake preview #komutuyla https://localhost:4000 sayfasında yapılan değişiklikler kontrol
+edilebilir.Değişiklikler henüz görüntülenmemişse server yeniden açılmalıdır.
+</code></pre>
+
+<h2>Yapılan degişiklikleri web sayfasında yayınlamak için;</h2>
+
+<pre><code class="ssh">- git add .
+- git commit -m "message"
+- git push origin source
+- rake generate
+- rake deploy
+</code></pre>
+
+<h2>Yazı yaınlamak için;</h2>
+
+<pre><code class="sh">- rake new_post["title"]    // source/_posts
+</code></pre>
+
+<p>ya da;
+<code>sh
+- rake new_page[Web/page.html] // source/Web/page.html
+</code>
+<code>sh
+- git add .
+- git commit -m "message"
+- git push origin source
+- rake generate
+- rake deploy
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
