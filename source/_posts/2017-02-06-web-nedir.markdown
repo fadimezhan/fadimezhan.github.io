@@ -12,6 +12,8 @@ web siteleri geliştirirken, öncelikle webin ne olduğunu, nasıl işlediğini
 bilmek gerekir. Bu konuyu anlatan Tayfun Öziş Erikan hocamızdan öğrendiklerimi
 size aktarmaya çalıştım.
 
+<!-- More -->
+
 1. Öncelikle bilgisayarımızı açtık, browser'a girip aradığımız sitenin url adresini
  girip Enter'a bastık. Bunun arkasında olanları inceleyelim.
 

@@ -9,10 +9,15 @@ published: true
 footer: true
 ---
 
+Octopress ile blog yazmak için komutları aşağıdaki gibi uygulamınız gerekiyor.
+
 ### Temada değişiklik yapmak için;
 ```sh ...
  rake preview #komutuyla https://localhost:4000 sayfasında yapılan değişiklikler kontrol edilebilir.Değişiklikler henüz görüntülenmemişse server yeniden açılmalıdır.
 ```
+
+
+<!-- More -->
 
 ### Yapılan degişiklikleri web sayfasında yayınlamak için;
 ```sh ...
