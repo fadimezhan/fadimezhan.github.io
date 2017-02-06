@@ -13,3 +13,5 @@ vendor
 node_modules
 Gemfile.lock
 .idea
+.idea/workspace.xml
+.themes/octostrap3
