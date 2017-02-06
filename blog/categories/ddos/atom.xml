@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ddos | Fadime Özhan]]></title>
   <link href="http://fadimezhan.github.io/blog/categories/ddos/atom.xml" rel="self"/>
   <link href="http://fadimezhan.github.io/"/>
-  <updated>2017-02-06T16:43:22+03:00</updated>
+  <updated>2017-02-06T16:44:25+03:00</updated>
   <id>http://fadimezhan.github.io/</id>
   <author>
     <name><![CDATA[Fadime Özhan]]></name>
@@ -18,13 +18,14 @@
     <link href="http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi/"/>
     <updated>2017-02-06T16:41:33+03:00</updated>
     <id>http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi</id>
-    <content type="html"><![CDATA[<h2>Bilişim Güvenliği Hakkında Genel Bilgiler</h2>
-
-<p>   Günümüzde neredeyse tüm firmalar işlemlerini internet üzerinden yapmaktadır. Bu durum verilerin kötü niyetli kişilerden korunmasını gerektirir. Son teknolojilerle bilgisayarın alt yapısının karmaşık hale gelmesiyle de verileri korumak zorlaşmıştır. Bu yüzden güvenlik alanında uzman kişilere ihtiyaç duyulur.</p>
+    <content type="html"><![CDATA[<p>Günümüzde neredeyse tüm firmalar işlemlerini internet üzerinden yapmaktadır. Bu durum verilerin kötü niyetli kişilerden korunmasını gerektirir. Son teknolojilerle bilgisayarın alt yapısının karmaşık hale gelmesiyle de verileri korumak zorlaşmıştır. Bu yüzden güvenlik alanında uzman kişilere ihtiyaç duyulur.</p>
 
 <h3>Hacker Kimdir?</h3>
 
 <p> Hacker filmlerden dolayı algımıza işleyen bilişim suçlarını işleyen kişi değildir. Daha genel bir tanımdır. Hacker; bilgisayarın detaylarını öğrenmeye ilgili, yazılım ve donanımın yapabileceklerini geliştirebilen kişidir.</p>
+
+<!-- More -->
+
 
 <p><strong>White Hat Hackers(Beyaz Şapkalı Hacker):</strong>   Bilişim sistemlerinin güvenliğini sağlayan ve geliştiren kişilerdir. Güvenlik uzmanı olarak adlandırılırlar.</p>
 
