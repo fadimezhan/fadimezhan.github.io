@@ -1,5 +1,5 @@
 #background-image {
-    height: 430px;
+    height: 520px;
     background-image: url("../images/dark-business.jpg");
     background-size: cover;
 }
@@ -22,4 +22,8 @@
 #footer{
     margin-top: 45px;
     margin-bottom: 45px;
+}
+
+.list-items{
+    padding: 15px;
 }

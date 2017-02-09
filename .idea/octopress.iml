@@ -2,7 +2,6 @@
 <module type="RUBY_MODULE" version="4">
   <component name="CompassSettings">
     <option name="compassExecutableFilePath" value="/var/lib/gems/1.9.1/gems/compass-1.0.3/bin/compass" />
-    <option name="compassSupportEnabled" value="true" />
     <option name="importPaths">
       <list>
         <option value="/var/lib/gems/1.9.1/gems/compass-core-1.0.3/stylesheets" />
