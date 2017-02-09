@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Kod | Fadime Özhan]]></title>
+  <link href="http://fadimezhan.github.io/blog/categories/kod/atom.xml" rel="self"/>
+  <link href="http://fadimezhan.github.io/"/>
+  <updated>2017-02-09T14:54:57+03:00</updated>
+  <id>http://fadimezhan.github.io/</id>
+  <author>
+    <name><![CDATA[Fadime Özhan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby'de Hash Yapısı]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/rubyde-hash-yapisi/"/>
+    <updated>2017-02-06T17:42:34+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/rubyde-hash-yapisi</id>
+    <content type="html"><![CDATA[<p>Hash, bir anahtar ve o anahtara ait değerden oluşan, sözlük benzeri bir yapıdır. Arraylere benzer ama arraylar integer ve onun indexinden oluşurken, hash yapısında istediğin tipi kullanabilirsin.
+Yapısı şöyledir:
+hash={&ldquo;anahtar&rdquo;=>&ldquo;değer&rdquo;}</p>
+
+<p>Hash yapısı kolayca oluşturulabilir;</p>
+
+<!-- More -->
+
+
+<pre><code class="rb">kelimeler={"hello"=&gt;"merhaba","yes"=&gt;"evet"} #(1)
+kelimeler={hello:"merhaba", yes:"evet"}      #(2)
+kelimeler={:hello=&gt;"merhaba",:yes"evet"}     #(3)
+</code></pre>
+
+<p>Aynı yapı farklı syntax özellikleriyle yukarıdaki gibi yazılabilir.</p>
+
+<p>Anahtardan değeri görüntülemek için;
+<code>rb
+kelimeler[hello]   #merhaba (1 ve 2 için)
+kelimeler[:hello]  #merhaba (3 için)
+</code>
+Tüm anahtarları ya da değerleri görüntülemek için;
+<code>rb
+kelimeler.keys     #hello,yes
+kelimeler.values   #merhaba,evet
+</code></p>
+
+<p>Hash yapısını method olarak da oluşturabilirsiniz.
+<code>rb
+kelimeler=Hash.new
+kelimeler["hello"]="merhaba  #metoda değer ekleme
+</code></p>
+
+<p>Hashlere default değer verebilirsiniz.
+Default değer vermezseniz, hash içinde bulunmayan değerler nil döndürür.
+<code>rb
+kelimeler=Hash.new(0)
+</code>
+ya da
+<code>rb
+kelimeler.default=0
+</code></p>
+
+<h3>Hashlerle Kullanabiliceğimiz Metodlar</h3>
+
+<p>Tüm anahtar-değerleri silmek için;
+<code>rb
+h={a =&gt; "a", b =&gt;"b"}
+h.clear              #{}
+</code>
+Anahtar birden fazla değere sahip olabilir. Bu değerleri görüntülemek için dizi dönüren assoc metodu;
+<code>rb
+h={"renkler"=&gt;["mavi","yeşil","mor"], harfler=&gt;["a","b"]}
+h.assoc("harfler")     #{"harfler",["a","b"]}
+h.assoc("yok")         #nil
+</code>
+Hash'e parametre göndererek işleme sokabiliriz;
+<code>rb
+hash = Hash.new{|h,k|h[k]=k.to_i*2}
+hash.default(10)  #20
+</code>
+Herhangi bir değeri silmek için;
+<code>rb
+h={"a" =&gt; 200, "b" =&gt;100}
+h.delete(a)
+</code>
+Koşullu olarak silmek için;
+<code>rb
+h={"a" =&gt; 200, "b" =&gt;100}
+h.delete_if{|key,value| value&gt;150}    #{"b"=&gt;100}
+</code></p>
+
+<p>Hash içindekileri döngüde kullanmak için;
+<code>rb
+h={"a" =&gt; 200}
+h.each{|key,value|puts "#{key} is #{value}"}  #a is 200
+</code>
+flatten metodu iç içe bulunan dizileri tek bir diziye dönüştürür;
+<code>rb
+a =  {1=&gt; "one", 2 =&gt; [2,"two"], 3 =&gt; "three"}
+a.flatten #[1, "one", 2, [2, "two"], 3, "three"]
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Fadime Özhan]]></title>
+  <link href="http://fadimezhan.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://fadimezhan.github.io/"/>
+  <updated>2017-02-09T14:54:57+03:00</updated>
+  <id>http://fadimezhan.github.io/</id>
+  <author>
+    <name><![CDATA[Fadime Özhan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby'de Hash Yapısı]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/rubyde-hash-yapisi/"/>
+    <updated>2017-02-06T17:42:34+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/rubyde-hash-yapisi</id>
+    <content type="html"><![CDATA[<p>Hash, bir anahtar ve o anahtara ait değerden oluşan, sözlük benzeri bir yapıdır. Arraylere benzer ama arraylar integer ve onun indexinden oluşurken, hash yapısında istediğin tipi kullanabilirsin.
+Yapısı şöyledir:
+hash={&ldquo;anahtar&rdquo;=>&ldquo;değer&rdquo;}</p>
+
+<p>Hash yapısı kolayca oluşturulabilir;</p>
+
+<!-- More -->
+
+
+<pre><code class="rb">kelimeler={"hello"=&gt;"merhaba","yes"=&gt;"evet"} #(1)
+kelimeler={hello:"merhaba", yes:"evet"}      #(2)
+kelimeler={:hello=&gt;"merhaba",:yes"evet"}     #(3)
+</code></pre>
+
+<p>Aynı yapı farklı syntax özellikleriyle yukarıdaki gibi yazılabilir.</p>
+
+<p>Anahtardan değeri görüntülemek için;
+<code>rb
+kelimeler[hello]   #merhaba (1 ve 2 için)
+kelimeler[:hello]  #merhaba (3 için)
+</code>
+Tüm anahtarları ya da değerleri görüntülemek için;
+<code>rb
+kelimeler.keys     #hello,yes
+kelimeler.values   #merhaba,evet
+</code></p>
+
+<p>Hash yapısını method olarak da oluşturabilirsiniz.
+<code>rb
+kelimeler=Hash.new
+kelimeler["hello"]="merhaba  #metoda değer ekleme
+</code></p>
+
+<p>Hashlere default değer verebilirsiniz.
+Default değer vermezseniz, hash içinde bulunmayan değerler nil döndürür.
+<code>rb
+kelimeler=Hash.new(0)
+</code>
+ya da
+<code>rb
+kelimeler.default=0
+</code></p>
+
+<h3>Hashlerle Kullanabiliceğimiz Metodlar</h3>
+
+<p>Tüm anahtar-değerleri silmek için;
+<code>rb
+h={a =&gt; "a", b =&gt;"b"}
+h.clear              #{}
+</code>
+Anahtar birden fazla değere sahip olabilir. Bu değerleri görüntülemek için dizi dönüren assoc metodu;
+<code>rb
+h={"renkler"=&gt;["mavi","yeşil","mor"], harfler=&gt;["a","b"]}
+h.assoc("harfler")     #{"harfler",["a","b"]}
+h.assoc("yok")         #nil
+</code>
+Hash'e parametre göndererek işleme sokabiliriz;
+<code>rb
+hash = Hash.new{|h,k|h[k]=k.to_i*2}
+hash.default(10)  #20
+</code>
+Herhangi bir değeri silmek için;
+<code>rb
+h={"a" =&gt; 200, "b" =&gt;100}
+h.delete(a)
+</code>
+Koşullu olarak silmek için;
+<code>rb
+h={"a" =&gt; 200, "b" =&gt;100}
+h.delete_if{|key,value| value&gt;150}    #{"b"=&gt;100}
+</code></p>
+
+<p>Hash içindekileri döngüde kullanmak için;
+<code>rb
+h={"a" =&gt; 200}
+h.each{|key,value|puts "#{key} is #{value}"}  #a is 200
+</code>
+flatten metodu iç içe bulunan dizileri tek bir diziye dönüştürür;
+<code>rb
+a =  {1=&gt; "one", 2 =&gt; [2,"two"], 3 =&gt; "three"}
+a.flatten #[1, "one", 2, [2, "two"], 3, "three"]
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails/"/>
+    <updated>2017-02-06T16:53:45+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>Ruby on Rails, Ruby dilinde yazılmış, açık kaynak kodlu ve web uygulaması
+geliştirmek için gereken tüm bileşenlere sahip frameworktür. İki tane felsefeyi esas alır;</p>
+
+<ul>
+<li><strong>Don&rsquo;t repeat yourself(DRY):</strong> Aynı işlemi yapan kodları tekrarlamayı
+  en aza indirmeyi savunur. Örneğin partial işlemi ile belli bir işi yapan
+ kod parçası farklı yerlerde kullanılabilir.</li>
+<li><strong>Convention over configuration(COC):</strong> Uygulama hazırlanırken sürekli yapılan rutin işleri, ruby on rails frameworkü tarafından daha kolay ve hızlı oluşturur.</li>
+</ul>
+
+
+<p>Ruby on Rails MVC(Model,View,Controller) mimarisini kullanır.</p>
+
+<ul>
+<li><strong>Model:</strong> Veritabanı ile ilişkiyi sağlar.Tüm verileri bulundurur.</li>
+<li><strong>Controller:</strong> Kullanıcının isteklerine göre işlemleri yapar ve modelden gelen verileri işler.</li>
+<li><strong>View:</strong> Kullanıcının görüntüleyeceği arayüzü içerir.</li>
+</ul>
+
+
+<p>Şimdi proje oluşturma işlemlerine bakalım:</p>
+
+<!-- More -->
+
+
+<pre><code>$ rails new blog      //blog isimli proje oluşturur.
+$ bundle install      //içindeki gemlleri yükler ya da günceller.
+$ cd blod             //oluşturulan klasörün içine girer.
+$ rails server        //serverı açar.
+</code></pre>
+
+<p>Son komutla <a href="http://localhost:3000">http://localhost:3000</a> adresinde serverı açar ve sizi sabit welcome sayfası karşılar.</p>
+
+<pre><code>$rails generate controller welcome index
+</code></pre>
+
+<p>Burada welcome isminde controller ve index isminde action(olay) oluşturuyoruz.  <strong>app/views/welcome/index.html.erb</strong> sayfası içindeki kodlar kullanıcının görüntüleyeceği kodları içeriyor.Bu içeriği şöyle değiştirelim.</p>
+
+<p>```</p>
+
+<h1>Hello,Rails</h1>
+
+
+<pre><code>
+ localhostu açtığımızda hala aynı sayfa bizi karşılıyor. Bu yüzden **config/routes.rb** içinden  #root 'welcome#index' kısmının başındaki # işareti kaldırıp, tekrar localimizi açalım. Artık yazdığımız html sayfası görüntüleniyor.
+
+Şimdiye kadar controller,action ve view oluşturmayı öğrendik.
+
+Artık blogumuza biraz içerik katalım.Bunun için resource oluşturuyouz. Bununla oluşturma,yoketme, güncelleme,okuma gibi kısımlar ekleniyor.
+**config/routes.rb** sayfasına kodumuzu ekleyelim.
+</code></pre>
+
+<p>get &lsquo;welcome/index&rsquo;
+resources :articles
+root &lsquo;welcome#index&rsquo;
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="http://localhost:3000/articles/new"&gt;http://localhost:3000/articles/new&lt;/a&gt;  sayfası oluşturuldu ama routing hatası veriyor. Controller oluşturulması gerekiyor.&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;$ bin/rails generate controller articles
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Şimdide bilinmeyen action hatası veriyor. Bunun için &lt;strong&gt;app/controllers/articles_controller.rb&lt;/strong&gt; sayfasına kodlarımızı ekleyelim.&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;class ArticlesController &lt; ApplicationController
+</span><span class='line'>  def new
+</span><span class='line'>  end
+</span><span class='line'>end
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;&lt;strong&gt;app/views/articles/new.html.erb&lt;/strong&gt; sayfasını oluşturup içine kodlarımızı yazalım.</span></code></pre></td></tr></table></div></figure></p>
+
+<h1>New Article</h1>
+
+
+<p>```
+Artık <a href="http://localhost:3000/articles/new">http://localhost:3000/articles/new</a> adresinde görüntüleyebiliriz.</p>
+]]></content>
+  </entry>
+  
+</feed>

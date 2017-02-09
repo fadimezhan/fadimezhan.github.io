@@ -1,0 +1,29 @@
+#background-image {
+    height: 520px;
+    background-image: url("../images/dark-business.jpg");
+    background-size: cover;
+}
+#brand{
+    margin: 5px 27px 10px 27px;
+}
+#fixed {
+    margin-bottom: 0px;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+}
+.item{
+    color: black !important;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-weight: 400;
+    line-height: 1;
+
+}
+#footer{
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.list-items{
+    padding: 15px;
+}

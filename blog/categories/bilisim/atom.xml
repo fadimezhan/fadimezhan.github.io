@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Bilişim | Fadime Özhan]]></title>
+  <link href="http://fadimezhan.github.io/blog/categories/bilisim/atom.xml" rel="self"/>
+  <link href="http://fadimezhan.github.io/"/>
+  <updated>2017-02-09T14:54:57+03:00</updated>
+  <id>http://fadimezhan.github.io/</id>
+  <author>
+    <name><![CDATA[Fadime Özhan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bilisim Güvenligi]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi/"/>
+    <updated>2017-02-06T16:41:33+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi</id>
+    <content type="html"><![CDATA[<p>Günümüzde neredeyse tüm firmalar işlemlerini internet üzerinden yapmaktadır. Bu durum verilerin kötü niyetli kişilerden korunmasını gerektirir. Son teknolojilerle bilgisayarın alt yapısının karmaşık hale gelmesiyle de verileri korumak zorlaşmıştır. Bu yüzden güvenlik alanında uzman kişilere ihtiyaç duyulur.</p>
+
+<h3>Hacker Kimdir?</h3>
+
+<p> Hacker filmlerden dolayı algımıza işleyen bilişim suçlarını işleyen kişi değildir. Daha genel bir tanımdır. Hacker; bilgisayarın detaylarını öğrenmeye ilgili, yazılım ve donanımın yapabileceklerini geliştirebilen kişidir.</p>
+
+<!-- More -->
+
+
+<p><strong>White Hat Hackers(Beyaz Şapkalı Hacker):</strong>   Bilişim sistemlerinin güvenliğini sağlayan ve geliştiren kişilerdir. Güvenlik uzmanı olarak adlandırılırlar.</p>
+
+<p><strong>Black Hat Hackers(Siyah Şapkalı Hacker):</strong> Bilişim dünyasının korsanlarıdır. Bir çok sebeple hareket etselerde, amaçları zarar vermektir.</p>
+
+<p><strong>Grey Hat Hackers(Gri Şapkalı Hacker):</strong> Hem savunma hem saldırı yapan gruptur. Amacı sadece kazancıdır.</p>
+
+<p><strong>Hacking</strong>; Bir programın kodlarının daha hızlı ve etkili olması için tersine mühendislik yapmaktır.</p>
+
+<p><strong>Tersine Mühendislik</strong>; Programın hatalarını tespit etmeye çalışmaktır.</p>
+
+<p>Sistemlere saldıran black hat hackerlar kullandıkları yöntemlere göre ayrılırlar:</p>
+
+<p><strong>Script Kiddies:</strong> Başkalarının yazdığı programları internetten indirir. Bu şekilde zarar vermeye çalışır. Lamer da denilir.</p>
+
+<p>Miscrosoft'un da dediği gibi;</p>
+
+<blockquote><p>&ldquo;En zararlı kişi ne yaptığını bilmeyendir.&rdquo;</p></blockquote>
+
+<p><strong>Phreakers:</strong> Eskiden sentral ve telefon hatlarının açıkları kullanan kişilerdir.</p>
+
+<p><strong>Crackers:</strong> Yazılımda  iyi olan, sistemleri kırıp bunları yayınlayan kişilerdir.</p>
+
+<h3>Kullanılan Genel Terimler</h3>
+
+<p><strong>Hactivizm:</strong> Hacking işleminin herhangi bir amaç için yapılmasıdır. Ama bu suç olmadığı anlamına gelmez.</p>
+
+<p><strong>Warez:</strong> Ticari yazılımın kırılarak dağıtılmasıdır.</p>
+
+<p><strong>Cowboy Dili:</strong> Hackerların chat programlarında kullandığı dildir.</p>
+
+<p><strong>Exploit:</strong> Sisteğimin zayıflığını kullanarak zarar veren kod.</p>
+
+<p><strong>Attack:</strong> Sisteme saldırmak</p>
+
+<p><strong>IDS:</strong> Kaçak giriş tespit sistemi</p>
+
+<p><strong>IPS:</strong> Kaçak giriş engelleme sistemi</p>
+
+<p><strong>DLP:</strong> Veri Kaybı engelleme sistemi</p>
+
+<p><strong>Url Filtrering:</strong> Http erişim kısıtlama</p>
+
+<p><strong>Threat :</strong> Tehtid</p>
+
+<p><strong>Vulnerability:</strong> Zayıflık</p>
+]]></content>
+  </entry>
+  
+</feed>

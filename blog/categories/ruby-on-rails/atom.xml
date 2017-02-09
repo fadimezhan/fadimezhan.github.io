@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby on Rails | Fadime Özhan]]></title>
+  <link href="http://fadimezhan.github.io/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
+  <link href="http://fadimezhan.github.io/"/>
+  <updated>2017-02-09T14:54:57+03:00</updated>
+  <id>http://fadimezhan.github.io/</id>
+  <author>
+    <name><![CDATA[Fadime Özhan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails/"/>
+    <updated>2017-02-06T16:53:45+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>Ruby on Rails, Ruby dilinde yazılmış, açık kaynak kodlu ve web uygulaması
+geliştirmek için gereken tüm bileşenlere sahip frameworktür. İki tane felsefeyi esas alır;</p>
+
+<ul>
+<li><strong>Don&rsquo;t repeat yourself(DRY):</strong> Aynı işlemi yapan kodları tekrarlamayı
+  en aza indirmeyi savunur. Örneğin partial işlemi ile belli bir işi yapan
+ kod parçası farklı yerlerde kullanılabilir.</li>
+<li><strong>Convention over configuration(COC):</strong> Uygulama hazırlanırken sürekli yapılan rutin işleri, ruby on rails frameworkü tarafından daha kolay ve hızlı oluşturur.</li>
+</ul>
+
+
+<p>Ruby on Rails MVC(Model,View,Controller) mimarisini kullanır.</p>
+
+<ul>
+<li><strong>Model:</strong> Veritabanı ile ilişkiyi sağlar.Tüm verileri bulundurur.</li>
+<li><strong>Controller:</strong> Kullanıcının isteklerine göre işlemleri yapar ve modelden gelen verileri işler.</li>
+<li><strong>View:</strong> Kullanıcının görüntüleyeceği arayüzü içerir.</li>
+</ul>
+
+
+<p>Şimdi proje oluşturma işlemlerine bakalım:</p>
+
+<!-- More -->
+
+
+<pre><code>$ rails new blog      //blog isimli proje oluşturur.
+$ bundle install      //içindeki gemlleri yükler ya da günceller.
+$ cd blod             //oluşturulan klasörün içine girer.
+$ rails server        //serverı açar.
+</code></pre>
+
+<p>Son komutla <a href="http://localhost:3000">http://localhost:3000</a> adresinde serverı açar ve sizi sabit welcome sayfası karşılar.</p>
+
+<pre><code>$rails generate controller welcome index
+</code></pre>
+
+<p>Burada welcome isminde controller ve index isminde action(olay) oluşturuyoruz.  <strong>app/views/welcome/index.html.erb</strong> sayfası içindeki kodlar kullanıcının görüntüleyeceği kodları içeriyor.Bu içeriği şöyle değiştirelim.</p>
+
+<p>```</p>
+
+<h1>Hello,Rails</h1>
+
+
+<pre><code>
+ localhostu açtığımızda hala aynı sayfa bizi karşılıyor. Bu yüzden **config/routes.rb** içinden  #root 'welcome#index' kısmının başındaki # işareti kaldırıp, tekrar localimizi açalım. Artık yazdığımız html sayfası görüntüleniyor.
+
+Şimdiye kadar controller,action ve view oluşturmayı öğrendik.
+
+Artık blogumuza biraz içerik katalım.Bunun için resource oluşturuyouz. Bununla oluşturma,yoketme, güncelleme,okuma gibi kısımlar ekleniyor.
+**config/routes.rb** sayfasına kodumuzu ekleyelim.
+</code></pre>
+
+<p>get &lsquo;welcome/index&rsquo;
+resources :articles
+root &lsquo;welcome#index&rsquo;
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="http://localhost:3000/articles/new"&gt;http://localhost:3000/articles/new&lt;/a&gt;  sayfası oluşturuldu ama routing hatası veriyor. Controller oluşturulması gerekiyor.&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;$ bin/rails generate controller articles
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Şimdide bilinmeyen action hatası veriyor. Bunun için &lt;strong&gt;app/controllers/articles_controller.rb&lt;/strong&gt; sayfasına kodlarımızı ekleyelim.&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;class ArticlesController &lt; ApplicationController
+</span><span class='line'>  def new
+</span><span class='line'>  end
+</span><span class='line'>end
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;&lt;strong&gt;app/views/articles/new.html.erb&lt;/strong&gt; sayfasını oluşturup içine kodlarımızı yazalım.</span></code></pre></td></tr></table></div></figure></p>
+
+<h1>New Article</h1>
+
+
+<p>```
+Artık <a href="http://localhost:3000/articles/new">http://localhost:3000/articles/new</a> adresinde görüntüleyebiliriz.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Fadime Özhan]]></title>
+  <link href="http://fadimezhan.github.io/atom.xml" rel="self"/>
+  <link href="http://fadimezhan.github.io/"/>
+  <updated>2017-02-09T14:54:57+03:00</updated>
+  <id>http://fadimezhan.github.io/</id>
+  <author>
+    <name><![CDATA[Fadime Özhan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby'de Hash Yapısı]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/rubyde-hash-yapisi/"/>
+    <updated>2017-02-06T17:42:34+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/rubyde-hash-yapisi</id>
+    <content type="html"><![CDATA[<p>Hash, bir anahtar ve o anahtara ait değerden oluşan, sözlük benzeri bir yapıdır. Arraylere benzer ama arraylar integer ve onun indexinden oluşurken, hash yapısında istediğin tipi kullanabilirsin.
+Yapısı şöyledir:
+hash={&ldquo;anahtar&rdquo;=>&ldquo;değer&rdquo;}</p>
+
+<p>Hash yapısı kolayca oluşturulabilir;</p>
+
+<!-- More -->
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;hello&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;merhaba&quot;</span><span class="p">,</span><span class="s2">&quot;yes&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;evet&quot;</span><span class="p">}</span> <span class="c1">#(1)</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="p">{</span><span class="ss">hello</span><span class="p">:</span><span class="s2">&quot;merhaba&quot;</span><span class="p">,</span> <span class="ss">yes</span><span class="p">:</span><span class="s2">&quot;evet&quot;</span><span class="p">}</span>      <span class="c1">#(2)</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="p">{</span><span class="ss">:hello</span><span class="o">=&gt;</span><span class="s2">&quot;merhaba&quot;</span><span class="p">,</span><span class="ss">:yes</span><span class="s2">&quot;evet&quot;</span><span class="p">}</span>     <span class="c1">#(3)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Aynı yapı farklı syntax özellikleriyle yukarıdaki gibi yazılabilir.</p>
+
+<p>Anahtardan değeri görüntülemek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">[</span><span class="n">hello</span><span class="o">]</span>   <span class="c1">#merhaba (1 ve 2 için)</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">[</span><span class="ss">:hello</span><span class="o">]</span>  <span class="c1">#merhaba (3 için)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Tüm anahtarları ya da değerleri görüntülemek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">.</span><span class="n">keys</span>     <span class="c1">#hello,yes</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">.</span><span class="n">values</span>   <span class="c1">#merhaba,evet</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hash yapısını method olarak da oluşturabilirsiniz.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="no">Hash</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">kelimeler</span><span class="o">[</span><span class="s2">&quot;hello&quot;</span><span class="o">]=</span><span class="s2">&quot;merhaba  #metoda değer ekleme</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hashlere default değer verebilirsiniz.
+Default değer vermezseniz, hash içinde bulunmayan değerler nil döndürür.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">=</span><span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ya da</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">kelimeler</span><span class="o">.</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Hashlerle Kullanabiliceğimiz Metodlar</h3>
+
+<p>Tüm anahtar-değerleri silmek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="n">a</span> <span class="o">=&gt;</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">b</span> <span class="o">=&gt;</span><span class="s2">&quot;b&quot;</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">clear</span>              <span class="c1">#{}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Anahtar birden fazla değere sahip olabilir. Bu değerleri görüntülemek için dizi dönüren assoc metodu;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;renkler&quot;</span><span class="o">=&gt;[</span><span class="s2">&quot;mavi&quot;</span><span class="p">,</span><span class="s2">&quot;yeşil&quot;</span><span class="p">,</span><span class="s2">&quot;mor&quot;</span><span class="o">]</span><span class="p">,</span> <span class="n">harfler</span><span class="o">=&gt;[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="o">]</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">assoc</span><span class="p">(</span><span class="s2">&quot;harfler&quot;</span><span class="p">)</span>     <span class="c1">#{&quot;harfler&quot;,[&quot;a&quot;,&quot;b&quot;]}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">assoc</span><span class="p">(</span><span class="s2">&quot;yok&quot;</span><span class="p">)</span>         <span class="c1">#nil</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hash'e parametre göndererek işleme sokabiliriz;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">hash</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">{</span><span class="o">|</span><span class="n">h</span><span class="p">,</span><span class="n">k</span><span class="o">|</span><span class="n">h</span><span class="o">[</span><span class="n">k</span><span class="o">]=</span><span class="n">k</span><span class="o">.</span><span class="n">to_i</span><span class="o">*</span><span class="mi">2</span><span class="p">}</span>
+</span><span class='line'><span class="nb">hash</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1">#20</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Herhangi bir değeri silmek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span> <span class="o">=&gt;</span><span class="mi">100</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Koşullu olarak silmek için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span> <span class="o">=&gt;</span><span class="mi">100</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">delete_if</span><span class="p">{</span><span class="o">|</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="o">|</span> <span class="n">value</span><span class="o">&gt;</span><span class="mi">150</span><span class="p">}</span>    <span class="c1">#{&quot;b&quot;=&gt;100}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hash içindekileri döngüde kullanmak için;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">h</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">each</span><span class="p">{</span><span class="o">|</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="o">|</span><span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>  <span class="c1">#a is 200</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>flatten metodu iç içe bulunan dizileri tek bir diziye dönüştürür;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">a</span> <span class="o">=</span>  <span class="p">{</span><span class="mi">1</span><span class="o">=&gt;</span> <span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;two&quot;</span><span class="o">]</span><span class="p">,</span> <span class="mi">3</span> <span class="o">=&gt;</span> <span class="s2">&quot;three&quot;</span><span class="p">}</span>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">flatten</span> <span class="c1">#[1, &quot;one&quot;, 2, [2, &quot;two&quot;], 3, &quot;three&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Baska Bilgisayara Octopress Yapılandırması]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/baska-bilgisayara-octopress-yapilandirmasi/"/>
+    <updated>2017-02-06T17:21:15+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/baska-bilgisayara-octopress-yapilandirmasi</id>
+    <content type="html"><![CDATA[<p>Birden fazla bilgisayar kullananlar veya bilgisayarına format atanlar
+için octopressi yeniden yapılandırmayı göstereceğim.</p>
+
+<p>Octopress reposunda iki dal bulunur; master ve source. Source kısmı blog
+yazılarımızı oluşturduğumuz dal, master kısmı ise tüm bloğu barındıran
+daldır. Kurulum aşamasında master dalındaki dosyalar <code>_deploy</code> klasörü içinde oluşturulur. Alt çizgi içermesinin sebebi ise diğer dalları push ettiğinizde alt çizgi bulunan dosyaları çekmez. Böylece <code>rake deploy</code> komutunuzla master dalınız güncellenir.</p>
+
+<!-- More -->
+
+
+<p>öncelikle github sayfasından repomuzun url adresini kopyalıyoruz ve
+ terminale geçiyoruz:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone -b <span class="nb">source </span>git@github.com:username/username.github.io.git octopress
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Source dalımızdaki dosyaları bilgisayarımıza octopress klasörü içinde kopyaladı.Şimdi octopress dizinine geçip master dalımızdaki dosyaları _deploy dizini içine klonluyoruz:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>octopress
+</span><span class='line'><span class="nv">$ </span>git clone git@github.com:username/username.github.io.git _deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Şimdi dosyalarımızı yapılandırmak için gerekli komutları yazalım:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>gem install bundler
+</span><span class='line'><span class="nv">$ </span>rbenv rehash
+</span><span class='line'><span class="nv">$ </span>bundle install
+</span><span class='line'><span class="nv">$ </span>rake setup_github_pages
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Son komuttan sonra url adresi isterse, github sayfasından kopyaladığımız repo url adresini yapıştırıyoruz.</p>
+
+<p>Artık diğer bilgisayarınızdaki octopress bloğunuzun local kopyası oluştu. Eğer birden fazla bilgisayardan blog yazmak istiyorsanız pull-push işlemlerine dikkat etmeniz gerekecektir.</p>
+
+<p>Blog yazınızı oluşturduğunuz bilgisayarda:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rake generate
+</span><span class='line'><span class="nv">$ </span>git add .
+</span><span class='line'><span class="nv">$ </span>git commit -am “Configuration <span class="k">for</span> another computer.”
+</span><span class='line'><span class="nv">$ </span>git push origin <span class="nb">source</span>  <span class="c"># source dalının (remote) güncellenmesi</span>
+</span><span class='line'><span class="nv">$ </span>rake deploy             <span class="c"># master dalının (remote) güncellenmesi</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Daha sonra başka bilgisayarda son değişiklikleri bilgisayarınınza çekmeniz gerkecek:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>octopress
+</span><span class='line'><span class="nv">$ </span>git pull origin <span class="nb">source</span>  <span class="c"># source dalının (remote) güncellenmesi</span>
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ./_deploy
+</span><span class='line'><span class="nv">$ </span>git pull origin master  <span class="c"># master dalının (remote) güncellenmesi</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Şimdi bloğumuza biraz içerik ekleyelim.</h3>
+
+<p>Yeni blog yazısı oluşturmak için ;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rake new_post<span class="o">[</span>“title”<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>blog yazıları <code>source/_posts</code> dizini altında depolanır.
+ Yukarıdaki komutla jekyll isimlendirmesine göre, YYYY-MM-DD-post-title.markdown dosyası oluşturulur ve text editörde açtığınızda yaml frontmatter kod bloğunu görürsünüz. Bu kod bloğu sayfaların ve postların nasıl işleneceğini söyler.</p>
+
+<p>Yeni sayfa oluşturmak için ;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rake new_page<span class="o">[</span>super-awesome<span class="o">]</span>  <span class="c"># /source/super-awesome/index.markdown  dosyası oluşturur.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ya da;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rake new_page<span class="o">[</span>super-awesome/page.html<span class="o">]</span>  <span class="c"># /source/super-awesome/page.html  dosyası oluşturur.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>bazı komutlar ;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rake generate   <span class="c"># postları ve sayfaları public dizini içinde oluşturur.</span>
+</span><span class='line'><span class="nv">$ </span>rake watch      <span class="c"># değişiklikler için source/ ve sass/  dizinlerini izler</span>
+</span><span class='line'><span class="nv">$ </span>rake preview    <span class="c"># izler ve  http://localhost:4000  adresindeki web server’a bağlar</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> Eğer postlarınızda yayınlamadan çalışmak istiyorsanız <code>published: false</code> kodunu yaml frontmatter kısmına ekleyin. Localhostunuzda <code>rake preview</code> komutuyla izleyebilirsiniz ama bu postunuz <code>rake genereate</code> yaptığınızda yayınlanmayacaktır.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails/"/>
+    <updated>2017-02-06T16:53:45+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>Ruby on Rails, Ruby dilinde yazılmış, açık kaynak kodlu ve web uygulaması
+geliştirmek için gereken tüm bileşenlere sahip frameworktür. İki tane felsefeyi esas alır;</p>
+
+<ul>
+<li><strong>Don&rsquo;t repeat yourself(DRY):</strong> Aynı işlemi yapan kodları tekrarlamayı
+  en aza indirmeyi savunur. Örneğin partial işlemi ile belli bir işi yapan
+ kod parçası farklı yerlerde kullanılabilir.</li>
+<li><strong>Convention over configuration(COC):</strong> Uygulama hazırlanırken sürekli yapılan rutin işleri, ruby on rails frameworkü tarafından daha kolay ve hızlı oluşturur.</li>
+</ul>
+
+
+<p>Ruby on Rails MVC(Model,View,Controller) mimarisini kullanır.</p>
+
+<ul>
+<li><strong>Model:</strong> Veritabanı ile ilişkiyi sağlar.Tüm verileri bulundurur.</li>
+<li><strong>Controller:</strong> Kullanıcının isteklerine göre işlemleri yapar ve modelden gelen verileri işler.</li>
+<li><strong>View:</strong> Kullanıcının görüntüleyeceği arayüzü içerir.</li>
+</ul>
+
+
+<p>Şimdi proje oluşturma işlemlerine bakalım:</p>
+
+<!-- More -->
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rails new blog      //blog isimli proje oluşturur.
+</span><span class='line'>$ bundle install      //içindeki gemlleri yükler ya da günceller.
+</span><span class='line'>$ cd blod             //oluşturulan klasörün içine girer.
+</span><span class='line'>$ rails server        //serverı açar.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Son komutla <a href="http://localhost:3000">http://localhost:3000</a> adresinde serverı açar ve sizi sabit welcome sayfası karşılar.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$rails generate controller welcome index</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Burada welcome isminde controller ve index isminde action(olay) oluşturuyoruz.  <strong>app/views/welcome/index.html.erb</strong> sayfası içindeki kodlar kullanıcının görüntüleyeceği kodları içeriyor.Bu içeriği şöyle değiştirelim.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;h1&gt;Hello,Rails&lt;/h1&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p> localhostu açtığımızda hala aynı sayfa bizi karşılıyor. Bu yüzden <strong>config/routes.rb</strong> içinden  #root &lsquo;welcome#index&rsquo; kısmının başındaki # işareti kaldırıp, tekrar localimizi açalım. Artık yazdığımız html sayfası görüntüleniyor.</p>
+
+<p>Şimdiye kadar controller,action ve view oluşturmayı öğrendik.</p>
+
+<p>Artık blogumuza biraz içerik katalım.Bunun için resource oluşturuyouz. Bununla oluşturma,yoketme, güncelleme,okuma gibi kısımlar ekleniyor.
+<strong>config/routes.rb</strong> sayfasına kodumuzu ekleyelim.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>get 'welcome/index'
+</span><span class='line'>resources :articles
+</span><span class='line'>root 'welcome#index'</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://localhost:3000/articles/new">http://localhost:3000/articles/new</a>  sayfası oluşturuldu ama routing hatası veriyor. Controller oluşturulması gerekiyor.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bin/rails generate controller articles</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Şimdide bilinmeyen action hatası veriyor. Bunun için <strong>app/controllers/articles_controller.rb</strong> sayfasına kodlarımızı ekleyelim.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>class ArticlesController &lt; ApplicationController
+</span><span class='line'>  def new
+</span><span class='line'>  end
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>app/views/articles/new.html.erb</strong> sayfasını oluşturup içine kodlarımızı yazalım.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;h1&gt;New Article&lt;/h1&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Artık <a href="http://localhost:3000/articles/new">http://localhost:3000/articles/new</a> adresinde görüntüleyebiliriz.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bilisim Güvenligi]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi/"/>
+    <updated>2017-02-06T16:41:33+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/bilisim-guvenligi</id>
+    <content type="html"><![CDATA[<p>Günümüzde neredeyse tüm firmalar işlemlerini internet üzerinden yapmaktadır. Bu durum verilerin kötü niyetli kişilerden korunmasını gerektirir. Son teknolojilerle bilgisayarın alt yapısının karmaşık hale gelmesiyle de verileri korumak zorlaşmıştır. Bu yüzden güvenlik alanında uzman kişilere ihtiyaç duyulur.</p>
+
+<h3>Hacker Kimdir?</h3>
+
+<p> Hacker filmlerden dolayı algımıza işleyen bilişim suçlarını işleyen kişi değildir. Daha genel bir tanımdır. Hacker; bilgisayarın detaylarını öğrenmeye ilgili, yazılım ve donanımın yapabileceklerini geliştirebilen kişidir.</p>
+
+<!-- More -->
+
+
+<p><strong>White Hat Hackers(Beyaz Şapkalı Hacker):</strong>   Bilişim sistemlerinin güvenliğini sağlayan ve geliştiren kişilerdir. Güvenlik uzmanı olarak adlandırılırlar.</p>
+
+<p><strong>Black Hat Hackers(Siyah Şapkalı Hacker):</strong> Bilişim dünyasının korsanlarıdır. Bir çok sebeple hareket etselerde, amaçları zarar vermektir.</p>
+
+<p><strong>Grey Hat Hackers(Gri Şapkalı Hacker):</strong> Hem savunma hem saldırı yapan gruptur. Amacı sadece kazancıdır.</p>
+
+<p><strong>Hacking</strong>; Bir programın kodlarının daha hızlı ve etkili olması için tersine mühendislik yapmaktır.</p>
+
+<p><strong>Tersine Mühendislik</strong>; Programın hatalarını tespit etmeye çalışmaktır.</p>
+
+<p>Sistemlere saldıran black hat hackerlar kullandıkları yöntemlere göre ayrılırlar:</p>
+
+<p><strong>Script Kiddies:</strong> Başkalarının yazdığı programları internetten indirir. Bu şekilde zarar vermeye çalışır. Lamer da denilir.</p>
+
+<p>Miscrosoft'un da dediği gibi;</p>
+
+<blockquote><p>&ldquo;En zararlı kişi ne yaptığını bilmeyendir.&rdquo;</p></blockquote>
+
+<p><strong>Phreakers:</strong> Eskiden sentral ve telefon hatlarının açıkları kullanan kişilerdir.</p>
+
+<p><strong>Crackers:</strong> Yazılımda  iyi olan, sistemleri kırıp bunları yayınlayan kişilerdir.</p>
+
+<h3>Kullanılan Genel Terimler</h3>
+
+<p><strong>Hactivizm:</strong> Hacking işleminin herhangi bir amaç için yapılmasıdır. Ama bu suç olmadığı anlamına gelmez.</p>
+
+<p><strong>Warez:</strong> Ticari yazılımın kırılarak dağıtılmasıdır.</p>
+
+<p><strong>Cowboy Dili:</strong> Hackerların chat programlarında kullandığı dildir.</p>
+
+<p><strong>Exploit:</strong> Sisteğimin zayıflığını kullanarak zarar veren kod.</p>
+
+<p><strong>Attack:</strong> Sisteme saldırmak</p>
+
+<p><strong>IDS:</strong> Kaçak giriş tespit sistemi</p>
+
+<p><strong>IPS:</strong> Kaçak giriş engelleme sistemi</p>
+
+<p><strong>DLP:</strong> Veri Kaybı engelleme sistemi</p>
+
+<p><strong>Url Filtrering:</strong> Http erişim kısıtlama</p>
+
+<p><strong>Threat :</strong> Tehtid</p>
+
+<p><strong>Vulnerability:</strong> Zayıflık</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Web Nedir, Nasıl Çalışır?]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/web-nedir/"/>
+    <updated>2017-02-06T12:33:15+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/web-nedir</id>
+    <content type="html"><![CDATA[<p>Lyk-2016, Ruby on Rails sınıfında öğrendiklerimi aktarmaya devam ediyorum. Ruby on Rails ile
+web siteleri geliştirirken, öncelikle webin ne olduğunu, nasıl işlediğini
+bilmek gerekir. Bu konuyu anlatan Tayfun Öziş Erikan hocamızdan öğrendiklerimi
+size aktarmaya çalıştım.</p>
+
+<!-- More -->
+
+
+<ol>
+<li><p>Öncelikle bilgisayarımızı açtık, browser'a girip aradığımız sitenin url adresini
+girip Enter'a bastık. Bunun arkasında olanları inceleyelim.</p>
+
+<ul>
+<li>Öncelikle girdiğimiz url adresini inceleyelim.</li>
+</ul>
+
+
+<blockquote><p><a href="http://www.google.com.tr/index">http://www.google.com.tr/index</a>
+protocol://subdomain.body.uzantı.region/path</p></blockquote>
+
+<p>   <strong>http protokolü;</strong> internet sayfalarını görüntülemek ve güvenli bağlantı kurmak için kullanılan protokoldür.
+   <strong>Uzantı</strong> alan adının türüdür.
+   Url adresinde görünmeyen bir kısım mecuttur.
+    <strong>www.google.com.tr:80</strong> Burada 80 port numarasıdır. 80 http protokolünün varsayılan portudur.</p></li>
+<li><p>Daha sonra bilgisayarımız bağlı olduğu modem aracılığı ile internet servis sağlayıcısına(ISP) yönlendirilir.(Türkiye
+için genellikle Türk Telekom)Modemlerin yaptığı şey,bize internete çıkmayı sağlayan ip adresi sağlamaktır.
+İnternet servis sağlayıcısı ise verilen adrese ulaşmak için bir çok birbirine bağlı Dns
+ile verilen adresi arar. Dns(domain name server), alan adını ip adresine dönüştürür. Verilen adrese ulaşıldığında
+ilgili server'a(sunucu) bağlanılır. Karşı tarafın sunucusunda da bir takım işlemler gerçekleşir.</p></li>
+<li><p>Sunucuya bağlanıyoruz, peki sunucunun içinde ne var?
+Sunucu görüntülediğimiz sayfaların sürekli ulaşılabilir olmasını sağlar.
+Sunucu aslında içinde belirli programların yüklü olduğu bilgisayarlardır. Sunucularda yüklü
+olması gereken programlar; Linux, web server, app server, database server'dır.
+Web server: Nginx, apachi, IIS
+App server: Puma, Unicorn, Webrick, Thin
+Database server: Oracle, Postgresql, Sqlite, Mysql</p></li>
+<li><p>Rails için kullanılan programlar; Linux, Nginx, Puma, Postgresql.</p></li>
+<li><p>Http ile her şey paket olarak kullanılır. Kullanıcının bilgisayarından yaptığı isteğe request paketi, sunucudan
+kullanıcıya gönderilen paket ise responce paketi olarak adlandırılır. Sunucuya ulaşıldığında aranan sayfa
+sunucuda mecut ise; responce paketi olarak kullanıcıya gönderilir. Ama bu paket doğrudan gönderilmez.
+Hızlı olması için paket parçalara ayrılır. Farklı adresler üzerinde kullanıcıya gönderilir ve
+kullanıcının browser'ında tekrar birleştirilerek, görüntülenir.</p></li>
+<li><p>Browser sadece html'den anlar. Kullanıcının isteği sunucuda mevcut ise responce paketi gönderilir ve
+sayfa görüntülenir. Peki istek sunucuda mevcut değil ise ne olur? Burada http status kodları devreye girer. Bazen web sayfalarında
+“404 Page Not Found” şeklinde hatalarla karşılaşrız. Bunlar bize hatayı anlamamız
+için http protokolünün sağladığı kodlardır. Bazıları şu şekildedir;</p>
+
+<ul>
+<li><strong>50x</strong>: server hatası</li>
+<li><strong>40x</strong>:sayfa yok</li>
+<li><strong>20x</strong>: root hatası</li>
+<li><strong>30x</strong>: daha önce göndermişse bu hatayı verir.</li>
+</ul>
+</li>
+</ol>
+
+
+<p>Daha temel ve animasyonlu anlatım için ziyaret edebilirsiniz;</p>
+
+<ul>
+<li><a href="http://www.bbc.co.uk/worldservice/flash/swf/superpower/web_works/tr/internet_expl_466.swf">http://www.bbc.co.uk/worldservice/flash/swf/superpower/web_works/tr/internet_expl_466.swf</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress Komutları]]></title>
+    <link href="http://fadimezhan.github.io/blog/2017/02/06/octopress-komutlari/"/>
+    <updated>2017-02-06T11:53:07+03:00</updated>
+    <id>http://fadimezhan.github.io/blog/2017/02/06/octopress-komutlari</id>
+    <content type="html"><![CDATA[<p>Octopress ile blog yazmak için komutları aşağıdaki gibi uygulamınız gerekiyor.</p>
+
+<h3>Temada değişiklik yapmak için;</h3>
+
+<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'> rake preview <span class="c">#komutuyla https://localhost:4000 sayfasında yapılan değişiklikler kontrol edilebilir.Değişiklikler henüz görüntülenmemişse server yeniden açılmalıdır.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- More -->
+
+
+<h3>Yapılan degişiklikleri web sayfasında yayınlamak için;</h3>
+
+<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'> git add .
+</span><span class='line'> git commit -m <span class="s2">&quot;message&quot;</span>
+</span><span class='line'> git push origin <span class="nb">source</span>
+</span><span class='line'><span class="nb"> </span>rake generate
+</span><span class='line'> rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Post yayınlamak için;</h3>
+
+<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'> rake new_post<span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span>    // <span class="nb">source</span>/_posts
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ya da;</p>
+
+<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'> rake new_page<span class="o">[</span>Web/page.html<span class="o">]</span> // <span class="nb">source</span>/Web/page.html
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span>...</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'> git add .
+</span><span class='line'> git commit -m <span class="s2">&quot;message&quot;</span>
+</span><span class='line'> git push origin <span class="nb">source</span>
+</span><span class='line'><span class="nb"> </span>rake generate
+</span><span class='line'> rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+</feed>
